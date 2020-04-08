@@ -1,12 +1,14 @@
 //定义弹幕类
 class Item {
-    constructor(context, id, color_arr, font_size, set_self) {
+    constructor(context, id, color, font_size, set_self) {
         //弹幕id值
         this.id = id;
         //生成弹幕dom节点
         this.Dom = $("<div class='dan_mu'>" + context + "</div>");
         //绑定弹幕dom的id
         this.Dom.attr('id', id);
+
+        /*
         if ((color_arr[0] == '') && (color_arr[1] == '') && (color_arr[2] == '')) {
             //随机生成弹幕颜色
             this.fontColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random()) + ")";
@@ -14,11 +16,21 @@ class Item {
             //根据color_arr生成弹幕颜色
             this.fontColor = "rgb(" + ((color_arr[0] == '') ? 0 : color_arr[0]) + "," + ((color_arr[1] == '') ? 0 : color_arr[1]) + "," + ((color_arr[2] == '') ? 0 : color_arr[2]) + ")";
         }
+        */
+
+        if (color == '') {
+            //随机生成弹幕颜色
+            this.fontColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random()) + ")";
+        } else {
+            this.fontColor = color;
+        }
+
+
         if (font_size == '') {
             //随机生成弹幕大小
             this.fontSize = Math.floor((Math.random() + 1) * 20) + "px";
         } else {
-            //根据font_size生成弹幕颜色
+            //根据font_size生成弹幕大小
             this.fontSize = font_size + "px";
         }
         //随机生成弹幕所在的高度

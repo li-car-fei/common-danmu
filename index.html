@@ -13,8 +13,9 @@
         <button class="send">发射</button>
         <button class="clear">关闭弹幕</button>
         <div class="word_style">
-            颜色: r: <input type="text" placeholder="red" name="red"></input> g: <input type="text" placeholder="green"
-                name="green"></input> b: <input type="text" placeholder="blue" name="blue"></input>
+            <!--颜色: r: <input type="text" placeholder="red" name="red"></input> g: <input type="text" placeholder="green"
+                name="green"></input> b: <input type="text" placeholder="blue" name="blue"></input>-->
+            颜色：<input type="color" name='color'></input>
             <br>
             字体大小：<input type="text" placeholder="字体大小" name="font_size"></input>
         </div>
@@ -34,10 +35,11 @@
 <style>
     .screen {
         position: relative;
-        width: 108%;
+        width: 100%;
         height: 400px;
         margin: 30px auto;
         overflow: hidden;
+        white-space: nowrap;
     }
 
     .toolbar {
