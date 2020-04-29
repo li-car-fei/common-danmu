@@ -1,3 +1,9 @@
+$('#select_height').change(function () {
+    var height = $(this).children('option:selected').val();
+    console.log(height);
+    change_height(height)
+})
+
 $(".send").on("click", function () {
     //先获取弹幕各样式值
     //let color_arr = [$(".word_style input[name='red']").val(), $(".word_style input[name='green']").val(), $(".word_style input[name='blue']").val()] || []
@@ -26,10 +32,11 @@ $(".send").on("click", function () {
 $("#text").on("keydown", function (event) {
     if (event.keyCode == 13) {
         //先获取弹幕各样式值
-        let color_arr = [$(".word_style input[name='red']").val(), $(".word_style input[name='green']").val(), $(".word_style input[name='blue']").val()] || []
+        let color = $(".word_style input[name='color']").val();
+        console.log(color);
         let font_size = $(".word_style input[name='font_size']").val() || ''
         // 创建弹幕
-        let Dom = new Item($("#text").val(), id++, color_arr, font_size, true);
+        let Dom = new Item($("#text").val(), id++, color, font_size, true);
         // 移动弹幕
         Dom.move()
         //输入框置空

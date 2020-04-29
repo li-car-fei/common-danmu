@@ -18,11 +18,19 @@
             颜色：<input type="color" name='color'></input>
             <br>
             字体大小：<input type="text" placeholder="字体大小" name="font_size"></input>
+            <br>
+            弹幕高度：<select id="select_height">
+                <option value=400>全屏</option>
+                <option value=200>半屏</option>
+                <option value=133>三分之一</option>
+                <option value=100>四分之一</option>
+            </select>
         </div>
     </div>
 
     <script src="jquery-3.4.1.js"></script>
-    <script src="Item.js"></script>
+    <!-- <script src="Item.js"></script> -->
+    <script src="./plugin.js"></script>
     <script>
         //标志是否关闭弹幕
         var isShow = true;

@@ -70,4 +70,5 @@ class Item {
             }
         }, this.speed);
     }
+
 }
