@@ -12,7 +12,7 @@ var dan_mu_arr = ['我是捞马',
 let clock_dan_mu = setInterval(() => {
     const index = Math.floor(Math.random() * 10);
     // 创建弹幕
-    let Dom = new Item(dan_mu_arr[index], id++, '', '', false);
+    let Dom = new Item(window.screen, dan_mu_arr[index], '', '', false);
     // 移动弹幕
     Dom.move()
 }, 2500);
